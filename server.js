@@ -2,6 +2,9 @@ const express = require("express");
 const app = express();
 
 const dbconnection = require("./db");
+const productsRoute = require("./routes/productsRoute");
+
+app.use("/api/products/", productsRoute);
 
 app.get("/", (req, res) => {
   res.send("This is express");
